@@ -1,14 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/hello-world"), func (w http.ResponseWriter, r http.Request)  {
-		w.Write([])byteconst	
-	
-		
-	}
-	http.ListenAndServe(":8080", nil)
+	http.Handle("/", http.FileServer(http.Dir("web_resources")))
+	fmt.Println("Server started on port 8085")
+	http.ListenAndServe(":8085", nil)
 }
