@@ -1,3 +1,3 @@
-module booking-app
+module webapp
 
 go 1.20
