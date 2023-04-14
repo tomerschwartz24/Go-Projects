@@ -44,7 +44,7 @@ func contactForm() {
 func main() {
 
 	// Handle HTTP requests to "/" and serve the web resources inside the webapp folder ( index.html / images and so on)
-	http.Handle("/", http.FileServer(http.Dir("web_resources")))
+	http.Handle("/", http.FileServer(http.Dir("webapp")))
 	contactForm()
 	//Error Handling
 	webappListener := http.ListenAndServe(":8080", nil)
