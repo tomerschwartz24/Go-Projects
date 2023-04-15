@@ -1,6 +1,6 @@
 pipeline {
     agent any
- //   stages {
+    stages {
  //       stage('Building website binary') {
  //           steps {
  //             sh 'go build website.go'
@@ -21,4 +21,4 @@ pipeline {
             }
         }
     }
-}
+}   
