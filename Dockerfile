@@ -2,11 +2,11 @@ FROM golang:latest
 
 WORKDIR /app
 
-COPY go.mod website.go ./
+COPY go.mod main.go  ./
 
 WORKDIR /app/web_resources
 
 COPY webapp /app/web_resources/
 WORKDIR /app
-CMD go run website
+CMD go run main.go
 

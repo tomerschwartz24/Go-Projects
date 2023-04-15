@@ -1,3 +1,3 @@
-module webapp
+module main
 
 go 1.20
