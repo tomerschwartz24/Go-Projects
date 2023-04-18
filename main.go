@@ -47,7 +47,7 @@ func main() {
 	http.Handle("/", http.FileServer(http.Dir("webapp")))
 	contactForm()
 	//Error Handling
-	webappListener := http.ListenAndServe(":8080", nil)
+	webappListener := http.ListenAndServe(":80", nil)
 	if webappListener != nil {
 		fmt.Printf("Unable to bind port  %v\n", webappListener)
 	} else {
