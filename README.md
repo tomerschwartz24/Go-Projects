@@ -6,6 +6,7 @@
 * The end result image in no more than 15mb thanks to the "Scratch" docker image which is the smallest image out there.
 * a Jenkinsfile is also included in order to build the application and push it to my private DockerHub.  
 * My home lab Jenkins Server runs a pipeline to build the golang application when a push is detected using the Poll SCM option.
+
   <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60">
 
 ### __How to run the application in localhost__:
