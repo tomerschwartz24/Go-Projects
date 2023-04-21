@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
- //       stage('Building website binary') {
- //           steps {
- //             sh 'go build website.go'
- //          }
- //      }
+        stage('Building website binary') {
+            steps {
+              sh 'go build website.go'
+           }
+       }
         stage('Building Website') {
             steps {
                 sh 'docker build -t tomerschwartz2411/website:webapp_$BUILD_NUMBER -f Dockerfile .'
