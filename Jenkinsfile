@@ -24,12 +24,12 @@ pipeline {
                 // curl test to check if application is accessible via http.
                 def curlExitCode = sh(script: "curl -s localhost:80 |grep -i 'ts devops enginner'", returnStatus: true)
                 if (curlExitCode != 0) {
-                    sh "sudo docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
+                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
                     // If the application fails the curl test the pipeline should fail at this condition.
                     error "Unable to determine if website is working properly, exit code : ${curlExitCode}"
                 } else {
                     println "Website seems to be functional, continuing..."}
-                    sh "sudo docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
+                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
                 }
             }
 
