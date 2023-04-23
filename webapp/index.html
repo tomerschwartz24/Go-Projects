@@ -99,9 +99,11 @@
 				<p></p>
 				<p>I created a basic Golang application utilizing the Go HTTP library to create a  web server. In order to enhance its functionality, I scoured the internet for suitable web resources, such as index.html and other critical files, then customized and optimized them to my liking.</p>
 				<p>To make the application widely available I acquired a domain name (tomerschwartz) through GoDaddy and deployed it to an EC2 instance in AWS under the Free Tier program. Furthermore, I implemented a Jenkins pipeline, leveraging the Poll SCM option to detect any changes in GitHub and initiate the build process automatically.</p>
+				<p>The build process will Build the docker image with multistage build , the final image will be based on docker "scratch" which is the smallest image out there.</p>
+				<p>additionally the docker image is being tested to make sure it is working fine before it is deployed to docker hub and "production" (ec2) using WatchTower </p>
 				<p>The pipeline then deploys the resulting Golang application image to Docker Hub.</p>
-				<p> In summary this project is the “opening” project to be able to demonstrate competence and projects in the future. 
-					Additionally it was also done  in order to have another platform to express my expertises in a more casual and widely manner in comparison to a formal CV.</p>
+				<p> In summary this project is the “opening” project to be able to demonstrate competence and projects in the future on this website. 
+					Additionally it was also done in order to have another platform to express my expertises in a more casual and widely manner in comparison to a formal CV.</p>
 			</article>
 
 			<!-- About -->
