@@ -1,13 +1,19 @@
 # MarketMe Web Server
-## Containerized golang web application
+## Containerized golang web application with full CI/CD process using Jenkins & WatchTower
 
 
 * The included Dockerfile is building the application using multi-stage building.
 * The end result image in no more than 15mb thanks to the "Scratch" docker image which is the smallest image out there.
-* a Jenkinsfile is also included in order to build the application and push it to my private DockerHub.  
+* a jenkinsfile is also included in order to build the application & test & push it to dockerhub and deploy it .  
 * My home lab Jenkins Server runs a pipeline to build the golang application when a push is detected using the Poll SCM option.
+* WatchTower is enabling a full continuous deployment proccess with minimal downtime for containers, <br> 
+  1. a watchtower container is deployed whenever the jenkins pipeline has reached the prod       stage, <br>
+  2. it will search for an updated digest inside the docker registry, if a newer one is found it will update the image on the web server.  
+  <br>
+  <img src="webapp/images/watchtower.jpg" alt="alt text" width="150" height="150"> <br>
+  <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60"> <br>
+  <img src="webapp/images/cicdpipeline.jpg" alt="alt text" width="600" height="250"> <br>
 
-  <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60">
 
 ### __How to run the application in localhost__:
 1. clone the repository
