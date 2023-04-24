@@ -48,7 +48,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to load certificate: %v", err)
 	}
-
 	tlsConfig := &tls.Config{Certificates: []tls.Certificate{cert}}
 	// Create an HTTP server with the TLS config and handle requests to "/"
 	server := &http.Server{
@@ -63,7 +62,7 @@ func main() {
 		log.Fatalf("Failed to start server: %v", err)
 	}
 }
-ß
+
 // Handle HTTP requests to "/" and serve the web resources inside the webapp folder ( index.html / images and so on)
 //http.Handle("/", http.FileServer(http.Dir("webapp")))
 //contactForm()
