@@ -1,4 +1,4 @@
-# MarketMe Web Server
+# MarketMe Web Server | www.tomerschwartz.com
 ## Containerized golang web application with full CI/CD process using Jenkins & WatchTower
 
 
@@ -10,19 +10,21 @@
   1. a watchtower container is deployed whenever the jenkins pipeline has reached the prod       stage, <br>
   2. it will search for an updated digest inside the docker registry, if a newer one is found it will update the image on the web server.  
   <br>
-  <img src="webapp/images/watchtower.jpg" alt="alt text" width="150" height="150"> <br>
+  <img src="webapp/images/watchtower.jpg" alt="alt text" width="150" height="150">
+  <img src="webapp/images/golang.jpg" alt="alt text" width="150" height="150"> <br>
   <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60"> <br>
   <img src="webapp/images/cicdpipeline.jpg" alt="alt text" width="600" height="250"> <br>
+  <img src="webapp/images/website.jpg" alt="alt text" width="600" height="250"> <br>
 
 
 ### __How to run the application in localhost__:
 1. clone the repository
 ```
-git clone -b go-webapp https://github.com/tomerschwartz24/Go-Projects.git
+git clone https://github.com/tomerschwartz24/Projects.git
 ```
-2. cd to Go-Projects directory
+2. cd to Projects directory
 ```
-cd Go-Projects
+cd Projects
 ```
 3. Build the application image 
 ```
