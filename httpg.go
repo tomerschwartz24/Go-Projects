@@ -1,9 +1,7 @@
 package main
 
 import (
-	"crypto/tls"
 	"fmt"
-	"log"
 	"net/http"
 	"strings"
 )
@@ -44,33 +42,15 @@ func contactForm() {
 }
 
 func main() {
-	cert, err := tls.LoadX509KeyPair("cloudflare.pem", "cloudflare.key")
-	if err != nil {
-		log.Fatalf("Failed to load certificate: %v", err)
-	}
-	tlsConfig := &tls.Config{Certificates: []tls.Certificate{cert}}
-	// Create an HTTP server with the TLS config and handle requests to "/"
-	server := &http.Server{
-		Addr:      ":443",
-		TLSConfig: tlsConfig,
-		Handler:   http.FileServer(http.Dir("webapp")),
-	}
 
-	// Listen for HTTPS requests
-	err = server.ListenAndServeTLS("", "")
-	if err != nil {
-		log.Fatalf("Failed to start server: %v", err)
+	// Handle HTTP requests to "/" and serve the web resources inside the webapp folder ( index.html / images and so on)
+	http.Handle("/", http.FileServer(http.Dir("webapp")))
+	contactForm()
+	//Error Handling
+	webappListener := http.ListenAndServe(":80", nil)
+	if webappListener != nil {
+		fmt.Printf("Unable to bind port  %v\n", webappListener)
+	} else {
+		fmt.Println("Webserver is now listening on port 8080")
 	}
 }
-
-// Handle HTTP requests to "/" and serve the web resources inside the webapp folder ( index.html / images and so on)
-//http.Handle("/", http.FileServer(http.Dir("webapp")))
-//contactForm()
-//Error Handling and http listener
-//webappListener := http.ListenAndServe(":80", nil)
-//if webappListener != nil {
-//	fmt.Printf("Unable to bind port  %v\n", webappListener)
-//} else {
-///	fmt.Println("Webserver is now listening on port 8080")
-//}
-//}
