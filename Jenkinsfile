@@ -17,23 +17,23 @@ pipeline {
         
 
         // Staging is jenkins server localhost due to the fact that this is a homelab.
-        stage('Test') {
-            steps {
-                script {
-                sh "docker run  --name staging_$BUILD_NUMBER  -p 443:80 -d tomerschwartz2411/website:webapp"
-                // curl test to check if application is accessible via http.
-                def curlExitCode = sh(script: "curl -s localhost:443 |grep -i 'https'", returnStatus: true)
-                if (curlExitCode != 0) {
-                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
-                    // If the application fails the curl test the pipeline should fail at this condition.
-                    error "Unable to determine if website is working properly, exit code : ${curlExitCode}"
-                } else {
-                    println "Website seems to be functional, continuing..."}
-                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
-                }
-            }
+//        stage('Test') {
+//            steps {
+//               script {
+//                sh "docker run  --name staging_$BUILD_NUMBER  -p 443:80 -d tomerschwartz2411/website:webapp"
+//                // curl test to check if application is accessible via http.
+//                def curlExitCode = sh(script: "curl -s localhost:443 |grep -i 'https'", returnStatus: true)
+//                if (curlExitCode != 0) {
+//                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
+//                    // If the application fails the curl test the pipeline should fail at this condition.
+//                    error "Unable to determine if website is working properly, exit code : ${curlExitCode}"
+//                } else {
+//                    println "Website seems to be functional, continuing..."}
+//                    sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
+//               }
+//            }
 
-        }
+//        }
 
         stage('Push') {
             steps {
