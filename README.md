@@ -11,7 +11,6 @@
   2. it will search for an updated digest inside the docker registry, if a newer one is found it will update the image on the web server.  
   <br>
   <img src="webapp/images/watchtower.jpg" alt="alt text" width="150" height="150">
-  <img src="webapp/images/golang.jpg" alt="alt text" width="150" height="150"> <br>
   <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60"> <br>
   <img src="webapp/images/cicdpipeline.jpg" alt="alt text" width="600" height="250"> <br>
   <img src="webapp/images/website.jpg" alt="alt text" width="600" height="250"> <br>
