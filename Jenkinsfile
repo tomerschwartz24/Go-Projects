@@ -20,9 +20,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                sh "docker run  --name staging_$BUILD_NUMBER  -p 80:80 -d tomerschwartz2411/website:webapp"
+                sh "docker run  --name staging_$BUILD_NUMBER  -p 443:80 -d tomerschwartz2411/website:webapp"
                 // curl test to check if application is accessible via http.
-                def curlExitCode = sh(script: "curl -s localhost:80 |grep -i 'ts devops enginner'", returnStatus: true)
+                def curlExitCode = sh(script: "curl -s localhost:443 |grep -i 'https'", returnStatus: true)
                 if (curlExitCode != 0) {
                     sh "docker stop staging_$BUILD_NUMBER  > /dev/null 2>&1  || true"
                     // If the application fails the curl test the pipeline should fail at this condition.
