@@ -13,7 +13,7 @@ COPY webapp /webapp
 FROM scratch
 COPY --from=webapp-builder  /build-golang-webapp/httpg /
 COPY --from=webapp-builder /webapp /webapp
-COPY cloudflare.key .
-COPY cloudflare.pem . 
+COPY /opt/certs/cloudflare.key .
+COPY /opt/certs/cloudflare.pem . 
 CMD ["./httpg"]
 ##########################################################
