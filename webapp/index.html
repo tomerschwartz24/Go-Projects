@@ -111,6 +111,7 @@
 				<p>To make the application widely available I acquired a domain name (tomerschwartz) through GoDaddy and deployed it to an EC2 instance in AWS under the Free Tier program. Furthermore, I implemented a Jenkins pipeline, leveraging the Poll SCM option to detect any changes in GitHub and initiate the build process automatically.</p>
 				<p>The build process will Build the golang applicatiton image using multistage build , the final image will be based on docker "scratch" image which is the smallest image out there.</p>
 				<p>additionally the docker image is being tested to make sure it is working fine before it is deployed to docker hub and "production" (ec2) using WatchTower </p>
+				<p>Furthermore  AWS lambda function & EventBridge schedules are targeting the ec2 instance in order to start& and stop the instance at certain times to save costs. </p>
 				<p> In summary this project is the “opening” project to be able to demonstrate competence and projects in the future on this website. 
 					Additionally it was also done in order to have another platform to express my expertises in a more casual and widely manner in comparison to a formal CV.</p>
 			</article>
