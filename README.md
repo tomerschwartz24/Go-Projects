@@ -1,7 +1,7 @@
 # MarketMe Web Server | www.tomerschwartz.com
 ## Containerized golang web application with full CI/CD process using Jenkins & WatchTower
 
-
+* This project is deployed on AWS EC2 and enchanced by Lambda functions & EventBridge in order to stop the instance at 00:00 IDT and start at 07:00AM IDT to optimize costs.
 * The included Dockerfile is building the application using multi-stage building.
 * The end result image in no more than 15mb thanks to the "Scratch" docker image which is the smallest image out there.
 * a jenkinsfile is also included in order to build the application & test & push it to dockerhub and deploy it .  
