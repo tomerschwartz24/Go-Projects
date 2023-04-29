@@ -1,5 +1,6 @@
 # MarketMe Web Server | www.tomerschwartz.com
 ## Containerized golang web application with full CI/CD process using Jenkins & WatchTower
+## Tools | Jenkins | WatchTower | EC2 | AWS Lambda | AWS EventBridge | Docker & Dockerfile | 
 
 * This project is deployed on AWS EC2 and enchanced by Lambda functions & EventBridge in order to stop the instance at 00:00 IDT and start at 07:00AM IDT to optimize costs.
 * The included Dockerfile is building the application using multi-stage building.
@@ -10,11 +11,13 @@
   1. a watchtower container is deployed whenever the jenkins pipeline has reached the prod       stage, <br>
   2. it will search for an updated digest inside the docker registry, if a newer one is found it will update the image on the web server.  
   <br>
-  <img src="webapp/images/watchtower.jpg" alt="alt text" width="150" height="150">
+  <img src="webapp/images/lambda.png" alt="alt text" width="70" height="70"> 
+  <img src="webapp/images/ec2pic.png" alt="alt text" width="70" height="70">
+  <img src="webapp/images/ebridge.png" alt="alt text" width="70" height="70">
+  <img src="webapp/images/watchtower.jpg" alt="alt text" width="80" height="80"> <br>
   <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60"> <br>
   <img src="webapp/images/cicdpipeline.jpg" alt="alt text" width="600" height="250"> <br>
   <img src="webapp/images/website.jpg" alt="alt text" width="600" height="250"> <br>
-
 
 ### __How to run the application in localhost__:
 1. clone the repository
