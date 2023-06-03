@@ -22,11 +22,11 @@
 ### __How to run the application in localhost__:
 1. clone the repository
 ```
-git clone https://github.com/tomerschwartz24/Projects.git
+git clone https://github.com/tomerschwartz24/MarketMe-CI-CD.git
 ```
 2. cd to Projects directory
 ```
-cd Projects
+cd MarketMe-CI-CD
 ```
 3. Build the application image 
 ```
