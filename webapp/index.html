@@ -46,13 +46,21 @@
 			<nav>
 				<ul>
 					<li><a href="#intro">Work</a></li>
-					<li><a href="#work">Projects</a></li>
+					<li class="dropdown">
+						<input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+						<label for="dropdown-toggle" class="dropdown-label">Projects</label>
+						<ul class="dropdown-menu">
+							<li><a href="#work1">tomerapp</a></li>
+							<li><a href="#work2">cryptoApp</a></li>
+							<li><a href="#work3">lambda</a></li>
+						</ul>
+					</li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-					<!--<li><a href="#elements">Elements</a></li>-->
 				</ul>
 			</nav>
 		</header>
+
 
 		<!-- Main -->
 		<div id="main">
@@ -102,19 +110,126 @@
 					communication and collaboration skills.</p>
 			</article>
 
-			<!-- Work -->
-			<article id="work">
-				<h2 class="major">My Projects</h2>
-				<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+			<!-- Work 1 -->
+			<article id="work1">
+				<h2 class="major">tomerapp</h2>
+				<span class="image main"><img src="images/watchtower.png" alt="" /></span>
 				<p></p>
-				<p>I created a basic Golang application utilizing the Go HTTP library to create a  web server. In order to enhance its functionality, I scoured the internet for suitable web resources, such as index.html and other critical files, then customized and optimized them to my liking.</p>
-				<p>To make the application widely available I acquired a domain name (tomerschwartz) through GoDaddy and deployed it to an EC2 instance in AWS under the Free Tier program. Furthermore, I implemented a Jenkins pipeline, leveraging the Poll SCM option to detect any changes in GitHub and initiate the build process automatically.</p>
-				<p>The build process will Build the golang applicatiton image using multistage build , the final image will be based on docker "scratch" image which is the smallest image out there.</p>
-				<p>additionally the docker image is being tested to make sure it is working fine before it is deployed to docker hub and "production" (ec2) using WatchTower </p>
-				<p>Furthermore  AWS lambda function & EventBridge schedules are targeting the ec2 instance in order to start& and stop the instance at certain times to save costs. </p>
-				<p> In summary this project is the “opening” project to be able to demonstrate competence and projects in the future on this website. 
-					Additionally it was also done in order to have another platform to express my expertises in a more casual and widely manner in comparison to a formal CV.</p>
+				<h3>Tools Used:</h3>
+				<ul>
+				  <li>Golang</li>
+				  <li>Jenkins</li>
+				  <li>GitHub</li>
+				  <li>GoDaddy</li>
+				  <li>AWS EC2</li>
+				  <li>Docker & Dockerfile</li>
+				  <li>WatchTower</li>
+				  <li>AWS Lambda</li>
+				  <li>AWS EventBridge</li>
+				</ul>
+				<style>
+					.main-title {
+					  display: flex;
+					  align-items: center;
+					}
+				  
+					.main-img {
+					  width: 1em;
+					  height: 1em;
+					  margin-right: 0.5em;
+					}
+				  </style>
+				
+				<h3 class="main-title">
+				<img src="images/golanglogo.svg" alt="golang logo" class="main-img" />
+				Golang Webserver
+				</h3>
+
+				<p>I created a Golang application utilizing the Go HTTP library to create a web server. In order to enhance its functionality, I scoured the internet for suitable web resources, such as index.html and other critical files, then customized and optimized them to my liking.</p>
+
+				
+				<h3 class="main-title">
+				<img src="images/com.png" alt="com logo" class="main-img" />
+				Domain Name and Deployment
+				</h3>
+  				<p>To make the application widely available, I acquired a domain name (tomerschwartz) through GoDaddy and deployed it to an EC2 instance in AWS under the Free Tier program. Furthermore, I implemented a Jenkins pipeline, leveraging the Poll SCM option to detect any changes in GitHub and initiate the build process automatically.</p>
+			
+				 
+				
+				<h3 class="main-title">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg" alt="Jenkins logo" class="main-img" />
+				Jenkins Pipeline Steps
+				</h3>
+				<span class="image main"><img src="images/jenkinsCICD.png" alt="" /></span>
+
+
+				
+				<h3 class="main-title">
+				<img src="images/docker.png" alt="docker logo" class="main-img" />
+				Build Process and Docker Image
+				</h3>
+  				<p>The build process involves building the Golang application image using a multistage build. The final image is based on the Docker "scratch" image, which is the smallest image out there. Additionally, the Docker image is being tested to ensure it is working fine before it is deployed to Docker Hub and the production EC2 instance using WatchTower.</p>
+
+  				<h3 class="main-title">
+				<img src="images/lambdasquare.png" alt="aws logo" class="main-img" />
+				Automation with AWS Lambda and EventBridge for cost savings
+			    </h3>
+  				<p>Furthermore, AWS Lambda functions and EventBridge schedules are targeting the EC2 instance in order to start and stop the instance at certain times to save costs.</p>
+
 			</article>
+
+
+			<!-- Work 2 -->
+			<article id="work2">
+				<h2 class="major">cryptoApp</h2>
+				<span class="image main"><img src="images/LB.png" alt="" /></span>
+				<p></p>
+				<p>cryptoApp is a monolithic web application deployed behind an AWS Application Load Balancer.
+				   The goal of cryptoApp is to demonstrate how to deploy a web application behind an AWS Application Load Balancer using these tools.</p>
+
+				<h3>Key Features and Tools:</h3>
+				<ul>
+					<li>Web server is written in Golang and runs as a systemd service</li>
+					<li>Utilizes EC2 user data to download the dependencies and start the web server</li>
+					<li>Uses AWS Application Load Balancer (ALB) to distribute traffic to EC2 instances</li>
+					<li>All AWS resources are provisioned and managed using Terraform</li>
+					<li>Terraform allows for infrastructure visualization using its graph feature</li>
+					<span class="image main"><img src="images/TF-Graph.png" alt="Terraform Graph" /></span>
+				</ul>
+
+			</article>
+
+			<!-- Work 3 -->
+			<article id="work3">
+				<h2 class="major">lambda</h2>
+				<span class="image main"><img src="images/lambda-gateway.png" alt="" /></span>
+				<p></p>
+				<h3>AWS Lambda Function</h3>
+  				<p>I have created a simple AWS Lambda function using Python. This Lambda function is designed to receive two numbers as input from the user. The function takes these input numbers, calculates their sum, and generates a result.</p>
+
+  				<h3>AWS SNS Integration</h3>
+  				<p>To enable communication and notification, I have also utilized AWS SNS (Simple Notification Service). I used Terraform, an infrastructure-as-code tool, to create an SNS topic. The SNS topic serves as a communication channel for the Lambda function.</p>
+
+  				<h3>Publishing the Result</h3>
+  				<p>Once the Lambda function has calculated the sum, it publishes the result to the SNS topic. This allows subscribers or other components of your system to receive notifications or consume the result. The use of Terraform ensures that the SNS topic is provisioned automatically and consistently as part of your infrastructure setup.</p>
+
+				<h3>Testing the function</h3>
+				<p>Run the following from a CLI and include the API gateway URL </p>
+				<pre>
+				<code>curl -X POST -H "Content-Type: application/json" -d '{"num1": 5, "num2": 5}' &lt;API Gateway Target URL&gt;</code>
+				</pre>
+
+
+				<h3>Response body example:</h3>
+				<pre>
+				<code>{"statusCode": 200, "body": "{\"result\": 10}"}</code>
+				</pre>
+
+				<h3>Architecture and SNS message</h3>
+				<span class="image main"><img src="images/awsglambda.png" alt="" /></span>
+				<span class="image main"><img src="images/emailresponse.png" alt="" /></span>
+				</article>
+
 
 			<!-- About -->
 			<article id="about">
