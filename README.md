@@ -11,13 +11,13 @@
   1. a watchtower container is deployed whenever the jenkins pipeline has reached the prod       stage, <br>
   2. it will search for an updated digest inside the docker registry, if a newer one is found it will update the image on the web server.  
   <br>
-  <img src="webapp/images/lambda.png" alt="alt text" width="70" height="70"> 
-  <img src="webapp/images/ec2pic.png" alt="alt text" width="70" height="70">
-  <img src="webapp/images/ebridge.png" alt="alt text" width="70" height="70">
-  <img src="webapp/images/watchtower.jpg" alt="alt text" width="80" height="80"> <br>
+  <img src="webapp/images/lambda.png" alt="alt text" width="68" height="68"> 
+  <img src="webapp/images/ec2pic.png" alt="alt text" width="68" height="68">
+  <img src="webapp/images/ebridge.png" alt="alt text" width="68" height="68">
+  <img src="webapp/images/watchtower.png" alt="alt text" width="70" height="70"> <br>
   <img src="webapp/images/pipeline.jpg" alt="alt text" width="400" height="60"> <br>
   <img src="webapp/images/cicdpipeline.jpg" alt="alt text" width="600" height="250"> <br>
-  <img src="webapp/images/website.jpg" alt="alt text" width="600" height="250"> <br>
+  <img src="webapp/images/website.png" alt="alt text" width="600" height="250"> <br>
 
 ### __How to run the application in localhost__:
 1. clone the repository
