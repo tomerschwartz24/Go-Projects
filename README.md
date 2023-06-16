@@ -1,4 +1,4 @@
-# MarketMe Web Server | www.tomerschwartz.com
+# MarketMe Web Server | tomerschwartz.com
 ## Containerized golang web application with full CI/CD process using Jenkins & WatchTower
 ## Tools | Jenkins | WatchTower | EC2 | AWS Lambda | AWS EventBridge | Docker & Dockerfile | 
 
